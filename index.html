@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <title>Dólar Elite | Terminal Profesional</title>
+</head>
+<body>
+
+    <header class="header">
+        <button id="theme-toggle">Cambiar Modo</button>
+        <h1 class="main-title">DÓLAR <span class="highlight">ELITE</span></h1>
+        <div class="update-pill" id="last-update">Conectando...</div>
+    </header>
+
+    <div class="converter-box">
+        <input type="number" id="monto-usuario" placeholder="INGRESAR MONTO (ARS)" oninput="validarYConvertir()">
+    </div>
+
+    <div id="historial-conversiones"></div>
+
+    <main class="main-container"></main>
+
+    <script src="script.js"></script>
+</body>
+</html>
