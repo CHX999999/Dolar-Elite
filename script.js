@@ -34,7 +34,7 @@ configs.forEach(m => {
     </article>`;
 });
 
-// Lógica de conversión (Afecta a todos los cuadros)
+// Lógica de conversión (Afecta a todos los cuadros, sin botón)
 window.validarYConvertir = () => {
     const input = document.getElementById('monto-usuario');
     const monto = parseFloat(input.value);
@@ -43,16 +43,12 @@ window.validarYConvertir = () => {
         const display = document.getElementById(`${m.id}-converted`);
         if (!isNaN(monto) && monto > 0 && lastPrices[m.id]) {
             const res = (monto / lastPrices[m.id]).toFixed(2);
-            display.innerHTML = `RECIBÍS: ${res} USD <button onclick="copiar('${res}')" style="cursor:pointer; border:none; background:none; margin-left:5px;">📋</button>`;
+            // Texto limpio sin botón
+            display.innerHTML = `RECIBÍS: ${res} USD`;
         } else { 
             display.innerHTML = ''; 
         }
     });
-};
-
-const copiar = (text) => { 
-    navigator.clipboard.writeText(text); 
-    alert('Copiado: ' + text); 
 };
 
 // Actualización de datos
@@ -71,7 +67,7 @@ async function update() {
             }
         });
         document.getElementById('last-update').innerText = `Actualizado: ${new Date().toLocaleTimeString()}`;
-        validarYConvertir(); // Se asegura de recalcular siempre tras la actualización
+        validarYConvertir(); // Recalcula al actualizar precios
     } catch(e) { 
         console.error("Error al actualizar precios"); 
     }
