@@ -8,90 +8,37 @@ body { background-color: #0B0E14; color: #FFFFFF; font-family: 'Inter', sans-ser
 .main-title { font-size: 5.5rem; font-weight: 900; letter-spacing: 12px; }
 .highlight { color: #F59E0B; }
 
-/* --- TEMPORIZADOR (UPDATE PILL) --- */
-/* Modo Oscuro: Verde Elegante */
-.update-pill { 
-    background: rgba(16, 185, 129, 0.1); 
-    color: #10B981; 
-    padding: 10px 30px; 
-    border-radius: 30px; 
-    font-size: 1.2rem; 
-    margin-top: 20px; 
-    border: 1px solid #10B981; 
-    display: inline-block;
-}
+/* --- TEMPORIZADOR --- */
+.update-pill { background: rgba(16, 185, 129, 0.1); color: #10B981; padding: 10px 30px; border-radius: 30px; font-size: 1.2rem; margin-top: 20px; border: 1px solid #10B981; display: inline-block; }
 
-/* --- CALCULADORA ELITE --- */
+/* --- CALCULADORA --- */
 .converter-box { margin-top: 20px; }
 #monto-usuario { width: 350px; padding: 12px; border-radius: 12px; background: #151921; color: #38BDF8; text-align: center; font-size: 1.2rem; border: 1px solid #334155; outline: none; }
+#monto-usuario::-webkit-outer-spin-button, #monto-usuario::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+#monto-usuario { -moz-appearance: textfield; }
 
 /* --- GRID DE TARJETAS --- */
 .main-container { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(2, 1fr); gap: 20px; width: 95vw; height: 55vh; margin: 40px auto 0 auto; justify-items: center; }
 .card { background: #151921; border: 1px solid rgba(255, 255, 255, 0.05); padding: 25px; border-radius: 16px; display: flex; flex-direction: column; justify-content: space-between; width: 100%; max-width: 550px; }
-.card-top h2 { font-size: 1.3rem; font-weight: 800; }
-.label-tag { font-size: 0.8rem; color: #94A3B8; background: #1E293B; padding: 3px 10px; border-radius: 5px; text-transform: uppercase; }
-.price-val { font-size: 1.4rem; color: #E2E8F0; }
-.main-price { font-size: 2.8rem; color: #38BDF8; font-weight: 900; font-family: monospace; }
-.spread-tag { font-size: 0.95rem; color: #F59E0B; font-weight: 700; }
 
-/* --- MODO CLARO (PALETA ELITE CLARA) --- */
-body.light-mode { background-color: #F8FAFC; color: #475569; } /* Texto principal gris suave, no negro */
+/* --- ESTRUCTURA INTERNA DE TARJETA --- */
+.card-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.card-top h2 { font-size: 1.3rem; font-weight: 800; }
+.label-tag { font-size: 0.7rem; color: #94A3B8; background: #1E293B; padding: 4px 10px; border-radius: 5px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+.info-group { margin-bottom: 15px; }
+.small-label { color: #64748B; font-size: 0.85rem; text-transform: uppercase; font-weight: 600; margin-bottom: 5px; }
+.price-val { font-size: 1.4rem; color: #E2E8F0; font-family: monospace; }
+.main-price { font-size: 2.8rem; color: #38BDF8; font-weight: 900; font-family: monospace; }
+.spread-tag { font-size: 0.95rem; color: #F59E0B; font-weight: 700; margin-top: 5px; }
+
+/* --- MODO CLARO --- */
+body.light-mode { background-color: #F8FAFC; color: #475569; }
 body.light-mode .main-title { color: #1E293B; }
 body.light-mode .card { background: #FFFFFF; border: 1px solid #E2E8F0; }
 body.light-mode #monto-usuario { background: #FFFFFF; border: 1px solid #CBD5E1; color: #0284C7; }
 body.light-mode .label-tag { background: #F1F5F9; color: #64748B; }
 body.light-mode .price-val { color: #475569; }
 body.light-mode .main-price { color: #0284C7; }
-body.light-mode #historial-conversiones { color: #94A3B8; }
-
-/* Modo Claro: Temporizador Celeste */
-body.light-mode .update-pill { 
-    background: rgba(14, 165, 233, 0.1); 
-    color: #0284C7; 
-    border: 1px solid #0EA5E9; 
-}
-
-/* Modo Claro: Otros detalles */
+body.light-mode .update-pill { background: rgba(14, 165, 233, 0.1); color: #0284C7; border: 1px solid #0EA5E9; }
 body.light-mode #theme-toggle { background: #E2E8F0; color: #475569; border: 1px solid #CBD5E1; }
-/* --- LIMPIAR FLECHAS INPUT NUMBER --- */
-#monto-usuario::-webkit-outer-spin-button,
-#monto-usuario::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-#monto-usuario {
-    -moz-appearance: textfield; /* Firefox */
-}
-Entendido. Para solucionar el problema de que el historial se vea como una línea de texto simple y desordenada, vamos a aplicar un estilo limpio que lo integre como un elemento de diseño "Elite".
-
-Aquí tienes el ajuste en el CSS y en el JavaScript para que se vea elegante.
-
-1. CSS (style.css)
-Agrega o reemplaza este bloque para que el historial tenga un diseño de "badge" (etiqueta) profesional.
-
-CSS
-/* --- ESTILO DEL HISTORIAL --- */
-#historial-conversiones {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin: 10px 0;
-    font-family: 'Inter', sans-serif;
-    font-size: 0.9rem;
-    color: #94A3B8;
-}
-
-.historial-item {
-    background: rgba(245, 158, 11, 0.1);
-    color: #F59E0B;
-    padding: 4px 12px;
-    border-radius: 15px;
-    border: 1px solid rgba(245, 158, 11, 0.3);
-}
-
-/* Ajuste para modo claro */
-body.light-mode .historial-item {
-    background: #FFF7ED;
-    color: #D97706;
-    border: 1px solid #F59E0B;
-}
