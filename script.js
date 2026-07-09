@@ -461,9 +461,9 @@ shareBtn.onclick = () => {
     if (navigator.share) {
         // Navegadores modernos (celulares y algunos de escritorio)
         navigator.share({
-            title: 'Dólar Elite',
-            text: 'Monitoreá tus métricas en tiempo real:',
-            url: window.location.href,
+title: 'Dólar Elite | Anticipá el Movimiento de Dinero',
+text: 'Inteligencia de monitoreo instantánea.',
+url: window.location.href,    
         })
         .catch((error) => console.log('Error al compartir:', error));
     } else {
