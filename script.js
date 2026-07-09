@@ -329,7 +329,8 @@ function changeTimeframe(tf) {
 // Actualización de datos
 async function update() {
     try {
-const res = await fetch('https://dolarapi.com/v1/cotizaciones');        
+        const res = await fetch('https://dolarapi.com/v1/dolares');
+        
         if (!res.ok) {
             throw new Error(`Error HTTP: ${res.status}`);
         }
@@ -454,19 +455,16 @@ async function init() {
 // Iniciar aplicación
 init();
 
-
 // Lógica para el botón de compartir
 shareBtn.onclick = () => {
     if (navigator.share) {
-        // Navegadores modernos (celulares y algunos de escritorio)
         navigator.share({
-title: 'Dólar Elite | Anticipá el Movimiento de Dinero',
-text: 'Inteligencia de monitoreo instantánea.',
-url: window.location.href,    
+            title: 'Dólar Elite | Anticipá el Movimiento de Dinero',
+            text: 'Inteligencia de monitoreo instantánea.',
+            url: window.location.href,    
         })
         .catch((error) => console.log('Error al compartir:', error));
     } else {
-        // Fallback: Si el navegador no soporta el menú nativo, copia al portapapeles
         navigator.clipboard.writeText(window.location.href)
             .then(() => showNotification('URL copiada al portapapeles'))
             .catch(() => showNotification('No se pudo copiar el enlace'));
