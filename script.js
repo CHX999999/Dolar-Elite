@@ -462,7 +462,7 @@ shareBtn.onclick = () => {
         // Navegadores modernos (celulares y algunos de escritorio)
         navigator.share({
             title: 'Dólar Elite',
-            text: 'Mirá las cotizaciones del dólar en tiempo real:',
+            text: 'Monitoreá tus métricas en tiempo real:',
             url: window.location.href,
         })
         .catch((error) => console.log('Error al compartir:', error));
