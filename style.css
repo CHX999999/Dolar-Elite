@@ -1281,3 +1281,24 @@ body {
 }
 
 
+/* Corrección de tamaño para botones móviles */
+@media (max-width: 640px) {
+    /* Seleccionamos ambos botones para igualarlos */
+    #theme-toggle, 
+    #share-btn {
+        width: 40px !important;    /* Tamaño fijo igual para ambos */
+        height: 40px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 0 !important;      /* Eliminamos padding interno para centrar mejor */
+        margin: 0 !important;       /* Aseguramos que no tengan márgenes distintos */
+        font-size: 1rem !important; /* Mismo tamaño de fuente/icono */
+    }
+
+    /* Ajuste específico para el contenedor de la cabecera en móvil */
+    .header-actions {
+        display: flex;
+        gap: 10px;                  /* Espacio uniforme entre los dos botones */
+    }
+}
