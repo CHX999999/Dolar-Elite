@@ -1164,10 +1164,12 @@ details {
 .footer-elite {
     padding: 60px 20px;
     text-align: center;
-    color: #64748B; /* Gris azulado neutro */
-    border-top: 1px solid rgba(255, 255, 255, 0.05); /* Línea casi imperceptible */
-    margin-top: 80px;
+    color: #64748B;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    /* Al usar -10px, forzamos al elemento a subir 20px respecto a tu ajuste anterior de 10px */
+    margin-top: -37px; 
 }
+
 
 .footer-meta {
     margin-bottom: 20px;
@@ -1277,4 +1279,5 @@ body {
 .main-price {
     margin-top: 0;
 }
+
 
