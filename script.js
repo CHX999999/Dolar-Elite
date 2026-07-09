@@ -329,8 +329,7 @@ function changeTimeframe(tf) {
 // Actualización de datos
 async function update() {
     try {
-        const res = await fetch('https://dolarapi.com/v1/dolares');
-        
+const res = await fetch('https://dolarapi.com/v1/cotizaciones');        
         if (!res.ok) {
             throw new Error(`Error HTTP: ${res.status}`);
         }
