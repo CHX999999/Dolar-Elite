@@ -2,20 +2,89 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0B0E14">
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <title>Dólar Elite | Terminal Profesional</title>
 </head>
 <body>
+    <div id="loading-overlay" class="loading-overlay" aria-hidden="true">
+        <div class="loading-spinner"></div>
+        <span class="loading-text">Obteniendo cotizaciones...</span>
+    </div>
+    <div id="error-banner" class="error-banner" role="alert" aria-live="assertive" hidden>
+        <span id="error-message">No se pudieron obtener las cotizaciones. Reintentando...</span>
+        <button id="error-dismiss" type="button" aria-label="Cerrar alerta">&times;</button>
+    </div>
     <header class="header">
-        <button id="theme-toggle">Cambiar Modo</button>
-        <h1 class="main-title">DÓLAR <span class="highlight">ELITE</span></h1>
+        <div class="header-top">
+            <button id="theme-toggle" type="button" class="icon-btn">◐</button>
+            <h1 class="main-title">DÓLAR <span class="highlight">ELITE</span></h1>
+            <div class="header-actions">
+<button id="share-btn" type="button" class="icon-btn" title="Compartir">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+        <circle cx="18" cy="5" r="3" />
+        <circle cx="6" cy="12" r="3" />
+        <circle cx="18" cy="19" r="3" />
+        <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" stroke="currentColor" stroke-width="2" />
+        <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" stroke="currentColor" stroke-width="2" />
+    </svg>
+</button>            </div>
+        </div>
         <div class="update-pill" id="last-update">Conectando...</div>
         <div class="converter-box">
-            <input type="text" id="monto-usuario" placeholder="INGRESAR MONTO (ARS)" oninput="validarYConvertir()">
+            <input
+                type="text"
+                id="monto-usuario"
+                inputmode="decimal"
+                autocomplete="off"
+                placeholder="INGRESAR MONTO (ARS)"
+                aria-label="Monto en pesos argentinos"
+            >
+        </div>
+        <div class="timeframe-selector">
+
         </div>
     </header>
-    <main class="main-container"></main>
+    <main class="main-container" id="cards-view"></main>
+    <main class="table-view" id="table-view" hidden>
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Dólar</th>
+                    <th>Compra</th>
+                    <th>Venta</th>
+                    <th>Spread</th>
+                    <th>Cambio 24H</th>
+                    <th>Máx 24H</th>
+                    <th>Mín 24H</th>
+                    <th>Volatilidad</th>
+                </tr>
+            </thead>
+            <tbody id="table-body"></tbody>
+        </table>
+    </main>
+    <div id="notification" class="notification" hidden></div>
     <script src="script.js"></script>
 </body>
 </html>
+
+<footer class="footer-elite">
+    <div class="footer-meta">
+        <a href="legal.html">Aviso Legal</a>
+        <span class="divider">•</span>
+        <a href="privacidad.html">Privacidad</a>
+    </div>
+    <div class="disclaimer-elite">
+        <p>
+            Dólar Elite provee indicadores de mercado con fines informativos. Este contenido no constituye asesoramiento financiero, legal o contable. Los valores expuestos son referenciales y no representan una oferta ni una cotización vinculante. La ejecución de cualquier estrategia basada en esta información queda a la exclusiva discreción y responsabilidad del usuario.
+        </p>
+    </div>
+    <div class="copyright-elite">
+        &copy; 2026 Dólar Elite. Todos los derechos reservados.
+    </div>
+</footer>
+
+
