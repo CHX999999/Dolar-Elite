@@ -470,3 +470,28 @@ shareBtn.onclick = () => {
             .catch(() => showNotification('No se pudo copiar el enlace'));
     }
 };
+
+
+
+// --- LÓGICA DE CIERRE CON ANIMACIÓN ---
+const closeBtn = document.querySelector('.close-btn');
+const banner = document.querySelector('.support-banner');
+
+if (closeBtn && banner) {
+    closeBtn.addEventListener('click', () => {
+        banner.style.opacity = '0';
+        banner.style.transform = 'translateY(20px)';
+        setTimeout(() => banner.style.display = 'none', 300);
+    });
+}
+
+
+
+// --- LÓGICA DE DETECCIÓN FINAL ---
+window.addEventListener('scroll', () => {
+    const banner = document.querySelector('.support-banner');
+    if (banner) {
+        const isBottom = (window.innerHeight + window.scrollY) >= document.body.offsetHeight - 100;
+        banner.classList.toggle('at-bottom', isBottom);
+    }
+});
