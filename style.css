@@ -1446,11 +1446,13 @@ body {
         font-size: 12px;
     }
 
-/* --- ESTILO ELITE: AJUSTE FINAL Y ELEVADO --- */
+    /* --- ESTILO ELITE: AJUSTADO Y SIN ESPACIOS --- */
+
+   /* --- ESTILO ELITE: TODO EN UN SOLO BLOQUE --- */
 @media (max-width: 768px) {
-    /* Reducimos el padding para que el scroll termine más arriba */
+    /* El padding del body debe estar aquí para que el scroll funcione */
     body {
-        padding-bottom: 140px !important; 
+        padding-bottom: 180px; 
     }
 
     .support-banner {
@@ -1469,9 +1471,92 @@ body {
         box-sizing: border-box;
     }
 
-    /* Ajustamos este bottom para que el banner quede "pegado" al texto */
     .support-banner.at-bottom {
         position: absolute;
-        bottom: 40px; /* Aumentar este número subirá el cartel hacia arriba */
+        bottom: 20px;
     }
 }
+
+/* --- ESTILO ELITE: MÁXIMA LEGIBILIDAD --- */
+
+/* 1. ESTILO PARA PC (Fondo claro premium para contraste total) */
+.support-banner {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 360px; 
+    
+    /* Fondo claro para que las letras oscuras resalten */
+    background: #ffffff !important; 
+    color: #1a1a1a !important; /* Texto negro para máxima lectura */
+    
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    z-index: 1000;
+    
+    /* Tipografía clara y negrita */
+    font-family: sans-serif;
+    font-size: 15px;
+    font-weight: 700; /* Negrita fuerte */
+    line-height: 1.4;
+    text-align: center;
+}
+
+/* Forzar color negro en los textos dentro del banner */
+.support-banner p, .support-banner span {
+    color: #1a1a1a !important;
+}
+
+/* 2. ESTILO PARA MÓVILES (Adaptación centrada) */
+@media (max-width: 768px) {
+    .support-banner {
+        position: fixed;
+        left: 50% !important;
+        right: auto !important;
+        transform: translateX(-50%);
+        bottom: 10px;
+        width: 90%;
+        max-width: 340px;
+        background: #ffffff !important;
+        color: #1a1a1a !important;
+    }
+}
+
+/* --- ESTILO ELITE: BORDES MÁS CERRADOS Y "X" MAYOR --- */
+@media (min-width: 769px) {
+    .support-banner {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 400px; /* Un poco más compacto */
+        
+        background: #ffffff !important; 
+        color: #1a1a1a !important;
+        
+        padding: 20px 24px; /* Achicamos el padding (más compacto) */
+        border-radius: 20px;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        z-index: 9999;
+        
+        font-family: sans-serif;
+        font-size: 16px !important; 
+        font-weight: 500 !important; 
+        line-height: 1.4;
+        text-align: center;
+    }
+
+    /* Agrandamos la X (botón de cierre) */
+    .support-banner .close-btn {
+        font-size: 20px !important; /* Un tamaño más grande */
+        padding: 5px;
+        cursor: pointer;
+    }
+
+    .support-banner p, .support-banner a, .support-banner span {
+        font-size: 16px !important;
+        color: #1a1a1a !important;
+        font-weight: 500 !important;
+    }
+}
+
