@@ -1559,4 +1559,11 @@ body {
         font-weight: 500 !important;
     }
 }
-
+/* --- CAMBIO ESPECÍFICO: TEXTO BLANCO EN BOTÓN CAFECITO --- */
+/* --- CAMBIO CORRECTO: SOLO PARA PC --- */
+@media (min-width: 769px) {
+    /* Usamos .cta-btn que es la clase real que tiene tu botón */
+    .support-banner .cta-btn {
+        color: #ffffff !important;
+    }
+}
