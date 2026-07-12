@@ -1567,3 +1567,39 @@ body {
         color: #ffffff !important;
     }
 }
+
+/* Fondo oscuro del modal */
+.modal {
+    position: fixed; 
+    top: 0; left: 0; width: 100%; height: 100%; 
+    background: rgba(0, 0, 0, 0.7); 
+    z-index: 1000; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+
+/* Contenedor estilo Elite */
+.modal-content-elite {
+    background: #0B0E14; /* Mismo fondo de tu web */
+    border: 1px solid #38BDF8; /* Borde color "Elite" */
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 450px;
+    color: #E2E8F0;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+.modal-content-elite h2 { color: #38BDF8; margin-top: 0; }
+
+.modal-content-elite .cta-btn {
+    background: #38BDF8;
+    color: #0B0E14;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 20px;
+}

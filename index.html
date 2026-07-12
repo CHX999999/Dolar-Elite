@@ -71,14 +71,34 @@
     </main>
     <div id="notification" class="notification" hidden></div>
     <script src="script.js"></script>
+
+<!-- Modal Aviso Legal -->
+<div id="modal-legal" class="modal" style="display: none;">
+    <div class="modal-content-elite">
+        <h2>Aviso Legal</h2>
+        <p>Dólar Elite es una herramienta informativa. Los datos son referenciales y no constituyen asesoramiento financiero.</p>
+        <button class="cta-btn" onclick="document.getElementById('modal-legal').style.display = 'none'">Cerrar</button>
+    </div>
+</div>
+
+<!-- Modal Privacidad -->
+<div id="modal-privacidad" class="modal" style="display: none;">
+    <div class="modal-content-elite">
+        <h2>Privacidad</h2>
+        <p>En Dólar Elite no almacenamos datos personales. Toda configuración se guarda localmente en tu navegador.</p>
+        <button class="cta-btn" onclick="document.getElementById('modal-privacidad').style.display = 'none'">Cerrar</button>
+    </div>
+</div>
+
+
 </body>
 </html>
 
 <footer class="footer-elite">
     <div class="footer-meta">
-        <a href="legal.html">Aviso Legal</a>
-        <span class="divider">•</span>
-        <a href="privacidad.html">Privacidad</a>
+<a href="#" onclick="document.getElementById('modal-legal').style.display = 'flex'; return false;">Aviso Legal</a>
+<span class="divider">•</span>
+<a href="#" onclick="document.getElementById('modal-privacidad').style.display = 'flex'; return false;">Privacidad</a>
     </div>
     <div class="disclaimer-elite">
         <p>
@@ -103,3 +123,4 @@
         </div>
     </div>
 </div>
+
