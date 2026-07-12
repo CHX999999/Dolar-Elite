@@ -1602,4 +1602,7 @@ body {
     cursor: pointer;
     font-weight: bold;
     margin-top: 20px;
+}.main-container {
+    padding-top:8px; /* Esto empuja el contenido hacia abajo desde adentro */
+    overflow: visible;
 }
