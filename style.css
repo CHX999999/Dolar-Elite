@@ -48,6 +48,15 @@ body::before {
     align-items: center;
     justify-content: space-between;
     margin-bottom: 8px;
+
+/* Forzamos a los botones a estar centrados en su celda de 50px */
+#theme-toggle, .header-actions {
+    display: flex;
+    justify-content: center; /* Centra el botón horizontalmente en su espacio */
+    align-items: center;
+}
+
+
 }
 
 .header-actions {
@@ -1325,10 +1334,13 @@ body {
     }
 
     /* Ajuste específico para el contenedor de la cabecera en móvil */
-    .header-actions {
-        display: flex;
-        gap: 10px;                  /* Espacio uniforme entre los dos botones */
-    }
+/* Ajuste para separar los botones a los extremos */
+.header-actions {
+    display: flex;
+    justify-content: space-between; /* Empuja los elementos hacia las esquinas */
+    align-items: center;
+    width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
+}
 }
 
 
