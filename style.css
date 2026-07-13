@@ -56,15 +56,24 @@ body::before {
 }
 
 .icon-btn {
+  
     background: linear-gradient(135deg, #151921 0%, #1E293B 100%);
     color: #94A3B8;
     border: 1px solid #334155;
-    padding: 8px 12px;
+    /* --- MODIFICACIONES --- */
+    width: 46px;              /* Ancho fijo para igualar al de compartir */
+    height: 40px;             /* Altura fija para mantener proporción */
+    padding: 0;               /* Eliminamos el padding interno */
+    display: flex;            /* Activamos flexbox */
+    align-items: center;      /* Centrado vertical */
+    justify-content: center;  /* Centrado horizontal */
+    /* ---------------------- */
     border-radius: 8px;
     transition: all 0.3s ease;
     font-size: 1rem;
     cursor: pointer;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+
 }
 
 .icon-btn:hover {
@@ -166,6 +175,37 @@ body::before {
 .converter-box { margin-top: 20px; flex-shrink: 0; }
 
 #monto-usuario {
+
+
+
+/* --- Estilo personalizado para el dropdown de moneda --- */
+.custom-dropdown {
+    width: 150px; /* Ancho reducido como pediste */
+    padding: 16px 24px;
+    margin: 10px auto; /* Centrado */
+    border-radius: 14px;
+    background: linear-gradient(135deg, #151921 0%, #1E293B 100%);
+    color: #38BDF8;
+    text-align: center;
+    font-size: 1.3rem;
+    border: 2px solid #334155;
+    outline: none;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    cursor: pointer;
+}
+
+/* Efecto hover para que coincida con el estilo del input */
+.custom-dropdown:hover {
+    border-color: #38BDF8;
+    box-shadow: 0 6px 25px rgba(56, 189, 248, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+
+
+    
     width: min(360px, 90vw);
     padding: 16px 24px;
     border-radius: 14px;
@@ -1235,25 +1275,13 @@ details {
     color: #38BDF8;
     border-color: #38BDF8;
 }
-header-top {
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Centra todo el contenido */
-    position: relative;
-    padding: 30px 0; /* Este padding controla cuánto baja el bloque entero */
-    gap: 20px; /* Espacio entre el título y los botones */
+.header-top {
+    display: grid;
+    grid-template-columns: 46px 1fr 46px; /* Botón izq, Título centrado, Botón der */
+    align-items: center;                  /* Centrado vertical */
+    width: 100%;
+    padding: 0px 0;                      /* Mantenemos tu padding original */
 }
-
-.main-title {
-    margin: 0; /* El título ahora será parte del flujo normal */
-    order: 2; /* Lo posicionamos en el medio */
-}
-
-/* Colocamos los botones a los lados usando orden */
-#theme-toggle { order: 1; }
-#native-share-btn { order: 1; }
-.header-actions { order: 3; }
-
 
 .main-container {
     /* Ajusta este valor para separar la parte de arriba de los precios */
@@ -1606,3 +1634,7 @@ body {
     padding-top:8px; /* Esto empuja el contenido hacia abajo desde adentro */
     overflow: visible;
 }
+
+
+
+
